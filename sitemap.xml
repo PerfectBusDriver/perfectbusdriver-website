@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Page d'accueil - Priorité maximale -->
+    <url>
+        <loc>https://VOTRE_USERNAME.github.io/perfect-bus-driver-site/index.html</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Politique de Confidentialité - Priorité haute (requise par Play Store) -->
+    <url>
+        <loc>https://VOTRE_USERNAME.github.io/perfect-bus-driver-site/privacy.html</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Conditions Générales d'Utilisation - Priorité haute -->
+    <url>
+        <loc>https://VOTRE_USERNAME.github.io/perfect-bus-driver-site/terms.html</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Mentions Légales - Priorité haute -->
+    <url>
+        <loc>https://VOTRE_USERNAME.github.io/perfect-bus-driver-site/legal.html</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>
+
+<!-- 
+INSTRUCTIONS D'UTILISATION :
+
+1. Remplacez VOTRE_USERNAME par votre nom d'utilisateur GitHub
+2. Mettez à jour la date lastmod à chaque modification de page
+3. Uploadez ce fichier à la racine de votre site (même niveau que index.html)
+
+FRÉQUENCES DE CHANGEMENT :
+- always : Page change à chaque accès
+- hourly : Toutes les heures
+- daily : Tous les jours
+- weekly : Toutes les semaines
+- monthly : Tous les mois
+- yearly : Tous les ans
+- never : Page archivée
+
+PRIORITÉS :
+- 1.0 : Page la plus importante (accueil)
+- 0.9 : Pages très importantes
+- 0.8 : Pages importantes
+- 0.5 : Pages standard
+- 0.3 : Pages moins importantes
+-->
