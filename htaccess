@@ -1,0 +1,258 @@
+# .htaccess pour Perfect Bus Driver
+# Optimisations pour serveurs Apache
+# ⚠️ Ce fichier ne fonctionne PAS sur GitHub Pages (utilisez uniquement sur hébergeur classique)
+
+# ============================================
+# 1. REDIRECTIONS HTTPS
+# ============================================
+# Force HTTPS (recommandé pour SEO)
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ============================================
+# 2. REDIRECTIONS WWW (choisir une version)
+# ============================================
+# Option A : Rediriger www vers non-www
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
+
+# Option B : Rediriger non-www vers www (commenté par défaut)
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+# </IfModule>
+
+# ============================================
+# 3. COMPRESSION GZIP
+# ============================================
+# Réduit la taille des fichiers pour chargement plus rapide
+<IfModule mod_deflate.c>
+    # Compresser HTML, CSS, JavaScript, texte, XML et polices
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE application/x-font-otf
+    AddOutputFilterByType DEFLATE application/x-font-truetype
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+</IfModule>
+
+# ============================================
+# 4. CACHE DU NAVIGATEUR
+# ============================================
+# Améliore les performances en mettant en cache les fichiers
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # CSS et JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    
+    # HTML
+    ExpiresByType text/html "access plus 0 seconds"
+    
+    # Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    
+    # PDF
+    ExpiresByType application/pdf "access plus 1 month"
+    
+    # XML
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType text/xml "access plus 0 seconds"
+</IfModule>
+
+# Cache-Control headers
+<IfModule mod_headers.c>
+    # 1 YEAR
+    <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|svg|js|css|swf|webp)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    
+    # 1 MONTH
+    <FilesMatch "\.(xml|txt)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+    
+    # NO CACHE for HTML
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
+# ============================================
+# 5. SÉCURITÉ
+# ============================================
+# Empêcher l'affichage du contenu des répertoires
+Options -Indexes
+
+# Protéger les fichiers sensibles
+<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
+    # Apache 2.2
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+        Satisfy All
+    </IfModule>
+    
+    # Apache 2.4
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+
+# Bloquer l'accès au fichier .htaccess lui-même
+<Files .htaccess>
+    # Apache 2.2
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+    
+    # Apache 2.4
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</Files>
+
+# En-têtes de sécurité
+<IfModule mod_headers.c>
+    # Empêcher le clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # Empêcher le MIME-sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Activer le filtre XSS
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Politique de référent
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy (à adapter selon vos besoins)
+    # Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+</IfModule>
+
+# ============================================
+# 6. PAGES D'ERREUR PERSONNALISÉES
+# ============================================
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+ErrorDocument 500 /500.html
+
+# ============================================
+# 7. TYPES MIME
+# ============================================
+<IfModule mod_mime.c>
+    # Fonts
+    AddType font/ttf .ttf
+    AddType font/otf .otf
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    AddType application/font-woff .woff
+    
+    # Images
+    AddType image/svg+xml .svg
+    AddType image/webp .webp
+    
+    # JavaScript
+    AddType application/javascript .js
+    AddType text/javascript .js
+    
+    # CSS
+    AddType text/css .css
+</IfModule>
+
+# ============================================
+# 8. REDIRECTIONS PAGES SPÉCIFIQUES
+# ============================================
+# Exemple : Rediriger une ancienne page vers une nouvelle
+# Redirect 301 /old-page.html /new-page.html
+
+# Rediriger automatiquement vers index.html si on accède au répertoire
+DirectoryIndex index.html
+
+# ============================================
+# 9. UTF-8 PAR DÉFAUT
+# ============================================
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+    AddCharset UTF-8 .html .css .js .xml .json .rss .atom
+</IfModule>
+
+# ============================================
+# 10. EMPÊCHER LE HOTLINKING (vol de bande passante)
+# ============================================
+# Empêcher d'autres sites d'utiliser vos images
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    # Remplacez VOTRE_DOMAINE.com par votre vrai domaine
+    RewriteCond %{HTTP_REFERER} !^$
+    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?VOTRE_DOMAINE\.com [NC]
+    RewriteRule \.(jpg|jpeg|png|gif|svg|webp)$ - [NC,F,L]
+</IfModule>
+
+# ============================================
+# NOTES D'UTILISATION
+# ============================================
+# 
+# ⚠️ IMPORTANT :
+# - Ce fichier ne fonctionne QUE sur serveurs Apache
+# - GitHub Pages utilise Nginx (ce fichier sera ignoré)
+# - Testez toujours après upload (certaines directives peuvent ne pas marcher)
+# - Certains hébergeurs désactivent certains modules
+# - Adaptez les règles à vos besoins spécifiques
+#
+# POUR TESTER :
+# 1. Uploadez le fichier à la racine de votre site
+# 2. Vérifiez que le site fonctionne toujours
+# 3. Si erreur 500, commentez les sections une par une pour identifier le problème
+# 4. Utilisez https://www.htaccesscheck.com/ pour vérifier la syntaxe
+#
+# PERFORMANCE :
+# - Activez toujours GZIP et le cache
+# - Forcez HTTPS pour améliorer le SEO
+# - Choisissez www ou non-www (pas les deux)
+#
+# SÉCURITÉ :
+# - Ne supprimez jamais les directives de sécurité
+# - Gardez toujours Options -Indexes
+# - Protégez le .htaccess lui-même
+#
+# ============================================
