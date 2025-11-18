@@ -1,0 +1,48 @@
+# robots.txt pour Perfect Bus Driver
+# Optimisé pour Google et autres moteurs de recherche
+
+# User-agent universel (tous les robots)
+User-agent: *
+Allow: /
+
+# Autoriser l'exploration de toutes les pages HTML
+Allow: /*.html
+
+# Pas de répertoires à bloquer (site simple)
+# Disallow: 
+
+# Sitemap XML (indiquer l'emplacement du sitemap)
+Sitemap: https://perfectbusdriver.github.io/perfect-bus-driver-site/sitemap.xml
+
+# Règles spécifiques pour les principaux moteurs
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Baidu (moteur chinois)
+User-agent: Baiduspider
+Allow: /
+
+# Yandex (moteur russe)
+User-agent: Yandex
+Allow: /
+
