@@ -1,0 +1,120 @@
+/* Language Selector Styles */
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.language-button {
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #667eea;
+    transition: all 0.3s;
+}
+
+.language-button:hover {
+    background: #667eea;
+    color: white;
+}
+
+.language-button .flag {
+    font-size: 20px;
+}
+
+.language-button .arrow {
+    font-size: 12px;
+    transition: transform 0.3s;
+}
+
+.language-dropdown.show .arrow {
+    transform: rotate(180deg);
+}
+
+.language-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.language-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.language-option:last-child {
+    border-bottom: none;
+}
+
+.language-option:hover {
+    background: #f0f4ff;
+}
+
+.language-option.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.language-option .flag {
+    font-size: 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .language-button .lang-name {
+        display: none;
+    }
+    
+    .language-button {
+        padding: 10px 15px;
+    }
+    
+    .language-menu {
+        right: -20px;
+    }
+}
+
+/* Logo image styles */
+.logo-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .logo-icon img {
+        width: 36px;
+        height: 36px;
+    }
+}
