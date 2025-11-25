@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfect Bus Driver - Die unverzichtbare App für professionelle Busfahrer. GPS, Navigation, Berechnungen und Vorschriften.">
+    <meta name="keywords" content="car, autocar, bus, driver, GPS, navigation, app, professional, transport">
+    <title>Perfect Bus Driver - Assistent für Professionelle Busfahrer</title>
+    <link rel="icon" type="image/png" href="../car.png">
+    <link rel="stylesheet" href="../common.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text h1 {
+            color: #667eea;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            color: #666;
+        }
+
+        .section ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .languages {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .language-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 0;
+            margin-top: 60px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .logo-text h1 {
+                font-size: 22px;
+            }
+
+            .header-nav {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 15px;
+            }
+
+            nav {
+                order: -1;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../car.png" alt="Perfect Bus Driver">
+                </div>
+                <div class="logo-text">
+                    <h1>Perfect Bus Driver</h1>
+                    <p>Ihr Professioneller Assistent</p>
+                </div>
+            </div>
+            <div class="header-nav">
+                <nav>
+                    <a href="#features">Hauptfunktionen</a>
+                    <a href="#languages">Mehrsprachige Anwendung</a>
+                    <a href="privacy.html">Datenschutzerklärung</a>
+                    <a href="terms.html">Nutzungsbedingungen</a>
+                    <a href="legal.html">Impressum</a>
+                </nav>
+                <div id="language-selector"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2>🚍 Die Unverzichtbare App für Busfahrer</h2>
+            <p>Navigieren, berechnen, verwalten Sie Ihre Routen mit Leichtigkeit. Perfect Bus Driver unterstützt Sie täglich mit leistungsstarken und intuitiven professionellen Werkzeugen.</p>
+            <div class="cta-buttons">
+                <a href="https://play.google.com/store" class="btn btn-primary">📱 Im Play Store herunterladen</a>
+                <a href="#features" class="btn btn-secondary">🔍 Funktionen entdecken</a>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <h2>✨ Hauptfunktionen</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>GPS-Tracker</h3>
+                    <p>Nehmen Sie Ihre Routen in Echtzeit auf und verfolgen Sie sie. Mehrsprachige Sprachführung, Abweichungserkennung und automatische Routenneuberechnung.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Detaillierte Statistiken</h3>
+                    <p>Zurückgelegte Strecke, Anzahl der Haltestellen. Exportieren/Teilen Sie Ihre Routen in KML, GPX, JSON oder CSV zur Analyse.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Zeitverwaltung</h3>
+                    <p>Amplitudenrechner, wöchentliche und tägliche Ruhezeit-Warnungen gemäß Vorschriften, Pausenverwaltung.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Sehenswürdigkeiten</h3>
+                    <p>Lokalisieren Sie schnell Ihre Position und teilen Sie sie, LKW-Parkplätze, Raststätten, Rastplätze und geeignete Tankstellen.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Vollständige Dokumentation</h3>
+                    <p>Mündliche Prüfungsbögen, RSE-Regelungsdokumentation, europäische Geschwindigkeitsbegrenzungen. Alles zur Hand.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Professionelle Werkzeuge</h3>
+                    <p>Spezialrechner, Konverter, Fahrgastzähler, Verwaltung persönlicher Dokumente, Fahrerplanung, FIMO/FCO-Informationen. Ein kompletter Werkzeugkasten.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎯 Warum Perfect Bus Driver Wählen?</h2>
+            <ul>
+                <li><strong>Intuitive Benutzeroberfläche</strong> - Speziell für professionelle Fahrer entwickelt</li>
+                <li><strong>Offline-Modus</strong> - Funktioniert ohne Internetverbindung für gespeicherte Routen</li>
+                <li><strong>Batterieeinsparung</strong> - Optimiert für längeren Gebrauch</li>
+                <li><strong>Regelmäßige Updates</strong> - Neue Funktionen und ständige Verbesserungen</li>
+                <li><strong>Reaktionsschneller Support</strong> - Team, das auf Ihre Bedürfnisse hört</li>
+                <li><strong>Datensicherheit</strong> - Ihre Routen bleiben auf Ihrem Gerät</li>
+                <li><strong>DSGVO-konform</strong> - Vollständige Achtung Ihrer Privatsphäre</li>
+                <li><strong>Werbefrei</strong> - Maximale Konzentration auf der Straße</li>
+            </ul>
+        </section>
+
+        <section id="languages" class="section">
+            <h2>🌍 Mehrsprachige Anwendung</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                Perfect Bus Driver spricht Ihre Sprache! In 7 Sprachen verfügbar, um Sie in ganz Europa zu begleiten.
+            </p>
+            <div class="languages">
+                <div class="language-badge">🇫🇷 Français</div>
+                <div class="language-badge">🇬🇧 English</div>
+                <div class="language-badge">🇪🇸 Español</div>
+                <div class="language-badge">🇵🇹 Português</div>
+                <div class="language-badge">🇩🇪 Deutsch</div>
+                <div class="language-badge">🇳🇱 Nederlands</div>
+                <div class="language-badge">🇮🇹 Italiano</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📱 Wie Funktioniert Es?</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="padding: 20px 0;">
+                    <h3 style="color: #667eea;">1️⃣ Laden Sie die Anwendung Herunter</h3>
+                    <p style="color: #666;">Kostenlos im Google Play Store verfügbar</p>
+                </div>
+                <div style="padding: 20px 0;">
+                    <h3 style="color: #667eea;">2️⃣ Konfigurieren Sie Ihre Einstellungen</h3>
+                    <p style="color: #666;">Wählen Sie Ihre Sprache und passen Sie die Oberfläche an</p>
+                </div>
+                <div style="padding: 20px 0;">
+                    <h3 style="color: #667eea;">3️⃣ Beginnen Sie mit der Verfolgung</h3>
+                    <p style="color: #666;">Beginnen Sie mit der Aufzeichnung Ihrer ersten Route / Berechnen Sie Ihre Amplitude oder Ruhezeit</p>
+                </div>
+                <div style="padding: 20px 0;">
+                    <h3 style="color: #667eea;">4️⃣ Genießen Sie die Werkzeuge</h3>
+                    <p style="color: #666;">Greifen Sie auf alle Rechner und Dokumentationen zu</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Startseite</a>
+                <a href="privacy.html">Datenschutzerklärung</a>
+                <a href="terms.html">Nutzungsbedingungen</a>
+                <a href="legal.html">Impressum</a>
+            </div>
+            <div class="contact-info">
+                <p><strong>Perfect Bus Driver</strong></p>
+                <p>Kontakt : <a href="mailto:perfectbusdriver@gmail.com">perfectbusdriver@gmail.com</a></p>
+                <p style="margin-top: 20px; color: #999;">© 2025 Perfect Bus Driver. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../language-selector.js"></script>
+</body>
+</html>
