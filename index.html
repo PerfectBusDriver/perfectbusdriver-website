@@ -18,8 +18,18 @@
             // Check if language is supported
             const targetLang = supportedLanguages.includes(browserLang) ? browserLang : defaultLang;
             
+            // Detect base path (for GitHub Pages subfolders)
+            const path = window.location.pathname;
+            let basePath = '';
+            
+            // If we're in a subfolder (like /perfectbusdriver-website/)
+            const pathParts = path.split('/').filter(p => p && p !== 'index.html');
+            if (pathParts.length > 0) {
+                basePath = '/' + pathParts[0];
+            }
+            
             // Redirect to language-specific index
-            window.location.href = `/${targetLang}/index.html`;
+            window.location.href = `${basePath}/${targetLang}/index.html`;
         })();
     </script>
     <style>
