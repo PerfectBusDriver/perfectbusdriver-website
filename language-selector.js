@@ -10,6 +10,27 @@ const languages = {
     it: { name: 'Italiano', flag: '🇮🇹' }
 };
 
+// Get the base path (for GitHub Pages subfolders like /perfectbusdriver-website/)
+function getBasePath() {
+    const path = window.location.pathname;
+    // Check if we're in a GitHub Pages subfolder
+    const match = path.match(/^(\/[^\/]+)?\/(fr|en|es|pt|de|nl|it)\//);
+    if (match && match[1]) {
+        return match[1]; // Returns something like /perfectbusdriver-website
+    }
+    // Check if we're at root level with a language folder
+    const rootMatch = path.match(/^\/(fr|en|es|pt|de|nl|it)\//);
+    if (rootMatch) {
+        return ''; // Root level, no base path
+    }
+    // Try to detect base path from current location
+    const parts = path.split('/').filter(p => p);
+    if (parts.length > 0 && !['fr', 'en', 'es', 'pt', 'de', 'nl', 'it'].includes(parts[0])) {
+        return '/' + parts[0]; // First part is likely the repository name
+    }
+    return ''; // Default to root
+}
+
 // Get current language from URL or browser
 function getCurrentLanguage() {
     const path = window.location.pathname;
@@ -27,12 +48,13 @@ function getCurrentLanguage() {
 function changeLanguage(newLang) {
     const currentPath = window.location.pathname;
     const currentLang = getCurrentLanguage();
+    const basePath = getBasePath();
     
     // Extract the page name (index.html, privacy.html, etc.)
     const pageName = currentPath.split('/').pop() || 'index.html';
     
-    // Build new path
-    const newPath = `/${newLang}/${pageName}`;
+    // Build new path with base path
+    const newPath = `${basePath}/${newLang}/${pageName}`;
     
     // Redirect
     window.location.href = newPath;
