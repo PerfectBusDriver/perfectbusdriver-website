@@ -3,468 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Perfect Bus Driver - L'application indispensable pour conducteurs de cars professionnels. GPS, navigation, calculs et réglementation.">
-    <meta name="keywords" content="car, autocar, bus, driver, GPS, navigation, app, professional, transport">
-    <title>Perfect Bus Driver - Assistant pour Conducteurs de Cars</title>
+    <meta name="description" content="Perfect Bus Driver, l'application des conducteurs de car : calcul de l'amplitude et des temps de repos en quelques secondes, et traceur de circuit pour refaire vos parcours à l'identique.">
+    <meta name="keywords" content="conducteur de car, autocar, amplitude, temps de repos, repos quotidien, repos hebdomadaire, traceur de circuit, RSE, FIMO, FCO">
+    <meta name="theme-color" content="#0a1628">
+    <title>Perfect Bus Driver – Amplitude, temps de repos et circuits pour conducteurs de car</title>
     <link rel="icon" type="image/png" href="../car.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="../common.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-icon {
-            width: 48px;
-            height: 48px;
-        }
-
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .logo-text h1 {
-            color: #667eea;
-            font-size: 28px;
-            font-weight: 700;
-        }
-
-        .logo-text p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .header-nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 5px 0;
-        }
-
-        nav a:hover {
-            color: #667eea;
-        }
-
-        .hero {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin: 40px 0;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero h2 {
-            font-size: 42px;
-            color: #667eea;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #666;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            color: #667eea;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .feature-card p {
-            color: #666;
-            font-size: 16px;
-        }
-
-        .section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 40px;
-            margin: 40px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .section h2 {
-            color: #667eea;
-            font-size: 32px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .section ul li {
-            padding: 10px 0 10px 30px;
-            position: relative;
-            color: #666;
-        }
-
-        .section ul li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        .languages {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .language-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-        }
-
-        footer {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px 0;
-            margin-top: 60px;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-info {
-            color: #666;
-            margin-top: 20px;
-        }
-
-        .contact-info a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .logo-text h1 {
-                font-size: 22px;
-            }
-
-            .header-nav {
-                width: 100%;
-                justify-content: space-between;
-                margin-top: 15px;
-            }
-
-            nav {
-                order: -1;
-                width: 100%;
-                justify-content: center;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../home.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-icon">
-                    <img src="../car.png" alt="Perfect Bus Driver">
-                </div>
-                <div class="logo-text">
-                    <h1>Perfect Bus Driver</h1>
-                    <p>Votre Assistant Professionnel</p>
-                </div>
-            </div>
-            <div class="header-nav">
-                <nav>
-                    <a href="#features">Fonctionnalités Principales</a>
-                    <a href="#languages">Application Multilingue</a>
-                    <a href="privacy.html">Politique de Confidentialité</a>
-                    <a href="terms.html">Conditions Générales d'Utilisation</a>
-                    <a href="legal.html">Mentions Légales</a>
-                </nav>
-                <div id="language-selector"></div>
-            </div>
+    <header class="site-header">
+        <div class="wrap">
+            <a href="index.html" class="brand">
+                <img src="../car.png" alt="">
+                <span>
+                    <span class="brand-name">Perfect Bus Driver</span>
+                    <span class="brand-tag">L'assistant du conducteur de car</span>
+                </span>
+            </a>
+            <nav class="main-nav" aria-label="Navigation principale">
+                <a href="#repos-amplitude">Repos &amp; amplitude</a>
+                <a href="#traceur">Traceur de circuit</a>
+                <a href="#outils">Autres outils</a>
+            </nav>
+            <div id="language-selector"></div>
+            <a href="https://play.google.com/store/apps/details?id=com.manu.perfectbusdriver" class="btn btn-primary header-cta">Télécharger</a>
         </div>
     </header>
 
-    <div class="container">
+    <main>
         <section class="hero">
-            <h2>🚍 L'Application Indispensable pour Conducteurs de Cars</h2>
-            <p>Naviguez, calculez, gérez vos circuits en toute simplicité. Perfect Bus Driver vous accompagne au quotidien avec des outils professionnels puissants et intuitifs.</p>
-            <div class="cta-buttons">
-                <a href="https://play.google.com/store" class="btn btn-primary">📱 Télécharger sur Play Store</a>
-                <a href="#features" class="btn btn-secondary">🔍 Découvrir les fonctionnalités</a>
-            </div>
-        </section>
-
-        <section id="features" class="section">
-            <h2>✨ Fonctionnalités Principales</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">🗺️</div>
-                    <h3>Traceur GPS</h3>
-                    <p>Enregistrez et suivez vos circuits en temps réel. Guidage vocal multilingue, détection de déviation et recalcul automatique de route.</p>
+            <div class="wrap">
+                <div>
+                    <span class="eyebrow">🚍 Pour les conducteurs de car et d'autocar</span>
+                    <h1>Votre amplitude et vos repos, <span class="hl">calculés en 2&nbsp;secondes.</span></h1>
+                    <p class="hero-lead">Saisissez votre prise de service : Perfect Bus Driver vous donne vos fins d'amplitude et de repos, vous rappelle l'échéance… et enregistre vos circuits pour les refaire à l'identique.</p>
+                    <div class="hero-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.manu.perfectbusdriver" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8 13.4 12l-9.8 10.2a1.5 1.5 0 0 1-.6-1.2V3c0-.5.2-.9.6-1.2Zm11 11.4 2.5 2.5-11.3 6.4 8.8-8.9Zm3.9-3.9 3 1.7c.9.5.9 1.6 0 2.1l-3 1.7-2.8-2.8 2.8-2.7ZM5.8 1.9l11.3 6.4-2.5 2.5-8.8-8.9Z"/></svg>
+                            Télécharger sur Google Play
+                        </a>
+                        <a href="#repos-amplitude" class="btn btn-ghost">Voir comment ça marche</a>
+                    </div>
+                    <ul class="hero-points">
+                        <li>Gratuit</li>
+                        <li>Sans publicité</li>
+                        <li>Vos données restent sur votre téléphone</li>
+                    </ul>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Statistiques Détaillées</h3>
-                    <p>Distance parcourue, nombre d'arrêts. Exportez/Partagez vos circuits en KML, GPX, JSON ou CSV pour analyse.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
-                    <h3>Gestion du Temps</h3>
-                    <p>Calculateurs d'amplitudes, alertes repos hebdomadaire et quotidien conformes à la réglementation, gestion des pauses.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📍</div>
-                    <h3>Points d'Intérêt</h3>
-                    <p>Localisez rapidement votre position et partagez là, parkings PL, restaurants routiers, aires de repos et stations-service adaptées.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>Documentation Complète</h3>
-                    <p>Fiches orales, documentation réglementaire R.S.E, limitations de vitesse européennes. Tout à portée de main.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Outils Professionnels</h3>
-                    <p>Calculateurs spécialisés, convertisseurs, compteur de voyageurs, gestion documents perso, planning conducteur, informations FIMO/FCO. Une boîte à outils complète.</p>
+                <div class="phone" aria-hidden="true">
+                    <div class="phone-screen">
+                        <div class="phone-top">
+                            <small>Calculateur</small>
+                            <strong>Amplitude</strong>
+                        </div>
+                        <div class="phone-start">
+                            <span>Prise de service<br>Lun. 3 nov.</span>
+                            <b>06:30</b>
+                        </div>
+                        <div class="amp-row"><span>12 h</span><b>18:30</b><i class="toggle"></i></div>
+                        <div class="amp-row on">
+                            <span>14 h</span><b>20:30</b><i class="toggle"></i>
+                            <div class="amp-progress"><i></i></div>
+                            <div class="amp-note">🔔 Rappel à 20:30 · il reste 5 h 19</div>
+                        </div>
+                        <div class="amp-row"><span>15 h</span><b>21:30</b><i class="toggle"></i></div>
+                        <div class="amp-row"><span>18 h · 2 cond.</span><b>00:30</b><i class="toggle"></i></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>🎯 Pourquoi Choisir Perfect Bus Driver ?</h2>
-            <ul>
-                <li><strong>Interface Intuitive</strong> - Conçue spécifiquement pour les conducteurs professionnels</li>
-                <li><strong>Mode Hors Ligne</strong> - Fonctionne sans connexion Internet pour les circuits sauvegardés</li>
-                <li><strong>Économie de Batterie</strong> - Optimisé pour une utilisation prolongée</li>
-                <li><strong>Mises à Jour Régulières</strong> - Nouvelles fonctionnalités et améliorations constantes</li>
-                <li><strong>Support Réactif</strong> - Équipe à l'écoute de vos besoins</li>
-                <li><strong>Sécurité des Données</strong> - Vos circuits restent sur votre appareil</li>
-                <li><strong>Conforme RGPD</strong> - Respect total de votre vie privée</li>
-                <li><strong>Sans Publicité</strong> - Concentration maximale sur la route</li>
-            </ul>
-        </section>
+        <!-- Activité n°1 -->
+        <section id="repos-amplitude" class="spot-time">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="kicker"><span class="num">1</span> L'essentiel au quotidien</span>
+                    <h2>Temps de repos et amplitude, sans calcul de tête</h2>
+                    <p>Fini les additions sur un coin de feuille de route. Indiquez une date et une heure, l'application calcule tout le reste selon la réglementation européenne.</p>
+                </div>
 
-        <section id="languages" class="section">
-            <h2>🌍 Application Multilingue</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 20px;">
-                Perfect Bus Driver parle votre langue ! Disponible dans 7 langues pour vous accompagner partout en Europe.
-            </p>
-            <div class="languages">
-                <div class="language-badge">🇫🇷 Français</div>
-                <div class="language-badge">🇬🇧 English</div>
-                <div class="language-badge">🇪🇸 Español</div>
-                <div class="language-badge">🇵🇹 Português</div>
-                <div class="language-badge">🇩🇪 Deutsch</div>
-                <div class="language-badge">🇳🇱 Nederlands</div>
-                <div class="language-badge">🇮🇹 Italiano</div>
+                <div class="time-grid">
+                    <article class="time-card featured">
+                        <div class="card-icon">⏱️</div>
+                        <h3>Amplitude</h3>
+                        <p>À partir de votre prise de service, obtenez immédiatement l'heure de fin de chaque amplitude, y compris en double équipage.</p>
+                        <div class="chips"><span class="chip">12 h</span><span class="chip">14 h</span><span class="chip">15 h</span><span class="chip">18 h</span></div>
+                    </article>
+                    <article class="time-card">
+                        <div class="card-icon">🌙</div>
+                        <h3>Repos quotidien &amp; hebdomadaire</h3>
+                        <p>Entrez le début de votre repos et sachez exactement à quelle heure vous pourrez reprendre le volant.</p>
+                        <div class="chips"><span class="chip">11 h</span><span class="chip">9 h</span><span class="chip">45 h</span><span class="chip">24 h</span></div>
+                    </article>
+                    <article class="time-card">
+                        <div class="card-icon">📊</div>
+                        <h3>Suivi du repos hebdo réduit</h3>
+                        <p>Après un repos hebdomadaire réduit, l'application calcule la compensation à prendre et sa date limite, et signale les repos trop courts.</p>
+                        <div class="chips"><span class="chip">Compensation</span><span class="chip">Date limite</span></div>
+                    </article>
+                </div>
+
+                <div class="benefits">
+                    <div class="benefit"><span class="ico">📅</span><span><b>Rappel dans l'agenda</b>Un interrupteur suffit pour ajouter l'échéance à votre agenda.</span></div>
+                    <div class="benefit"><span class="ico">🔔</span><span><b>Notification à l'heure</b>Vous êtes prévenu quand l'amplitude ou le repos se termine.</span></div>
+                    <div class="benefit"><span class="ico">📈</span><span><b>Barre de progression</b>Temps écoulé et temps restant, mis à jour chaque minute.</span></div>
+                </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>📱 Comment Ça Marche ?</h2>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="padding: 20px 0;">
-                    <h3 style="color: #667eea;">1️⃣ Téléchargez l'Application</h3>
-                    <p style="color: #666;">Disponible gratuitement sur Google Play Store</p>
+        <!-- Activité n°2 -->
+        <section id="traceur" class="spot-circuit">
+            <div class="wrap">
+                <div class="circuit-layout">
+                    <div>
+                        <div class="section-head">
+                            <span class="kicker"><span class="num">2</span> Vos parcours, à l'identique</span>
+                            <h2>Le traceur de circuit</h2>
+                            <span class="not-gps"><span class="x">✕</span> Ce n'est pas un GPS</span>
+                            <p>Un GPS choisit la route pour vous. Le traceur, lui, vous fait suivre <strong>votre</strong> parcours : celui que vous avez enregistré, avec vos arrêts, dans l'ordre. Idéal pour un circuit scolaire, une ligne régulière ou un ramassage que vous ne connaissez pas encore.</p>
+                        </div>
+
+                        <ol class="steps">
+                            <li class="step">
+                                <span class="card-icon">⏺️</span>
+                                <div><h3>Enregistrez</h3><p>Appuyez sur Départ, marquez chaque arrêt d'une touche, puis Arrivée. Le tracé s'enregistre même écran éteint.</p></div>
+                            </li>
+                            <li class="step">
+                                <span class="card-icon">💾</span>
+                                <div><h3>Sauvegardez et partagez</h3><p>Nommez votre circuit, retrouvez-le dans « Mes circuits » et envoyez-le à un collègue.</p></div>
+                            </li>
+                            <li class="step">
+                                <span class="card-icon">🧭</span>
+                                <div><h3>Refaites-le</h3><p>L'application vous guide le long de votre tracé, annonce le prochain arrêt et vous alerte si vous vous en écartez.</p></div>
+                            </li>
+                        </ol>
+
+                        <div class="compare" role="table" aria-label="GPS ou traceur de circuit">
+                            <div class="compare-row compare-head" role="row"><div role="columnheader">Un GPS</div><div role="columnheader">Le traceur</div></div>
+                            <div class="compare-row" role="row"><div role="cell">Calcule l'itinéraire le plus rapide</div><div role="cell">Suit le parcours que vous avez roulé</div></div>
+                            <div class="compare-row" role="row"><div role="cell">Ignore vos points de ramassage</div><div role="cell">Annonce chaque arrêt, dans l'ordre</div></div>
+                            <div class="compare-row" role="row"><div role="cell">Recalcule dès que vous changez de rue</div><div role="cell">Vous alerte si vous quittez le circuit</div></div>
+                        </div>
+                    </div>
+
+                    <figure class="circuit-map">
+                        <svg viewBox="0 0 480 420" role="img" aria-label="Exemple de circuit enregistré avec ses arrêts">
+                            <rect width="480" height="420" fill="#eef2f7"/>
+                            <g fill="#ffffff">
+                                <rect x="30" y="30" width="120" height="80" rx="10"/><rect x="180" y="30" width="110" height="80" rx="10"/><rect x="320" y="30" width="100" height="80" rx="10"/><rect x="450" y="30" width="60" height="80" rx="10"/>
+                                <rect x="30" y="140" width="120" height="110" rx="10"/><rect x="180" y="140" width="110" height="110" rx="10"/><rect x="320" y="140" width="100" height="110" rx="10"/><rect x="450" y="140" width="60" height="110" rx="10"/>
+                                <rect x="30" y="280" width="120" height="110" rx="10"/><rect x="180" y="280" width="110" height="110" rx="10"/><rect x="320" y="280" width="100" height="110" rx="10"/><rect x="450" y="280" width="60" height="110" rx="10"/>
+                            </g>
+                            <rect x="196" y="160" width="78" height="70" rx="8" fill="#d9f0dc"/>
+                            <path d="M60 125 H 305 V 395" fill="none" stroke="#9aa6b8" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"/>
+                            <path d="M60 125 H 165 V 265 H 305 V 125 H 435 V 265 H 305 V 395" fill="none" stroke="#0aa5b8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-weight="800" font-size="14" text-anchor="middle">
+                                <circle cx="60" cy="125" r="15" fill="#0a1628"/><text x="60" y="130" fill="#fff">A</text>
+                                <circle cx="165" cy="200" r="14" fill="#fff" stroke="#f59e0b" stroke-width="4"/><text x="165" y="205" fill="#0a1628">1</text>
+                                <circle cx="235" cy="265" r="14" fill="#fff" stroke="#f59e0b" stroke-width="4"/><text x="235" y="270" fill="#0a1628">2</text>
+                                <circle cx="370" cy="125" r="14" fill="#fff" stroke="#f59e0b" stroke-width="4"/><text x="370" y="130" fill="#0a1628">3</text>
+                                <circle cx="435" cy="200" r="14" fill="#fff" stroke="#f59e0b" stroke-width="4"/><text x="435" y="205" fill="#0a1628">4</text>
+                                <circle cx="305" cy="395" r="15" fill="#0a1628"/><text x="305" y="400" fill="#fff">B</text>
+                            </g>
+                            <g transform="translate(305 190)">
+                                <circle r="20" fill="#0aa5b8" opacity=".2"/>
+                                <circle r="11" fill="#0aa5b8" stroke="#fff" stroke-width="4"/>
+                            </g>
+                            <g transform="translate(24 24)">
+                                <rect width="196" height="52" rx="12" fill="#0a1628"/>
+                                <text x="16" y="22" font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#8fb3d6">PROCHAIN ARRÊT</text>
+                                <text x="16" y="41" font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#fff">Arrêt 3 · 450 m</text>
+                            </g>
+                        </svg>
+                        <figcaption class="map-legend">
+                            <span><i style="background:#0aa5b8"></i>Votre circuit enregistré</span>
+                            <span><i style="background:repeating-linear-gradient(90deg,#9aa6b8 0 3px,transparent 3px 8px)"></i>Ce que proposerait un GPS</span>
+                        </figcaption>
+                    </figure>
                 </div>
-                <div style="padding: 20px 0;">
-                    <h3 style="color: #667eea;">2️⃣ Configurez Vos Préférences</h3>
-                    <p style="color: #666;">Choisissez votre langue et personnalisez l'interface</p>
+                <p class="export-note">Export possible en <b>GPX</b>, <b>KML</b> et <b>JSON</b>, avec statistiques de distance et d'arrêts. Le fond de carte et le recalcul d'itinéraire nécessitent une connexion Internet.</p>
+            </div>
+        </section>
+
+        <!-- Autres outils -->
+        <section id="outils" class="more">
+            <div class="wrap">
+                <div class="section-head center">
+                    <span class="kicker" style="color: var(--ink-muted)">Et aussi</span>
+                    <h2>Toute la boîte à outils du conducteur</h2>
+                    <p>Les petits outils qui simplifient la journée, réunis dans la même application.</p>
                 </div>
-                <div style="padding: 20px 0;">
-                    <h3 style="color: #667eea;">3️⃣ Commencez à Tracer</h3>
-                    <p style="color: #666;">Démarrez l'enregistrement de votre premier circuit / Calculez votre amplitude ou temps de repos</p>
+                <div class="tool-grid">
+                    <article class="tool"><div class="card-icon">📍</div><h3>Position &amp; points d'intérêt</h3><p>Partagez votre position, trouvez parkings PL, aires de repos, restaurants routiers et stations.</p></article>
+                    <article class="tool"><div class="card-icon">📚</div><h3>Réglementation</h3><p>Fiches RSE, limitations de vitesse européennes, fiches orales, infos FIMO / FCO.</p></article>
+                    <article class="tool"><div class="card-icon">🧮</div><h3>Calculateurs</h3><p>Addition d'heures, conversion minutes / centièmes, vitesse moyenne, chrono de pause.</p></article>
+                    <article class="tool"><div class="card-icon">🗂️</div><h3>Organisation</h3><p>Compteur de voyageurs, planning conducteur et documents personnels.</p></article>
                 </div>
-                <div style="padding: 20px 0;">
-                    <h3 style="color: #667eea;">4️⃣ Profitez des Outils</h3>
-                    <p style="color: #666;">Accédez à tous les calculateurs et documentations</p>
+                <ul class="why">
+                    <li>🎯 Conçue par et pour les conducteurs</li>
+                    <li>🔒 Conforme RGPD</li>
+                    <li>📵 Calculateurs utilisables sans connexion</li>
+                    <li>🔋 Économe en batterie</li>
+                    <li>🔄 Mises à jour régulières</li>
+                    <li>💬 Support réactif</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="how">
+            <div class="wrap">
+                <div class="section-head center">
+                    <h2>Prêt en trois étapes</h2>
+                </div>
+                <div class="how-grid">
+                    <div class="how-item"><h3>Installez l'application</h3><p>Gratuite sur Google Play, sans compte à créer.</p></div>
+                    <div class="how-item"><h3>Choisissez votre langue</h3><p>L'interface et le guidage vocal s'adaptent à votre langue.</p></div>
+                    <div class="how-item"><h3>Lancez votre premier calcul</h3><p>Entrez votre prise de service ou démarrez l'enregistrement d'un circuit.</p></div>
+                </div>
+                <div class="langs">
+                    <p>🌍 Disponible en 7 langues</p>
+                    <div class="lang-list">
+                        <a href="../fr/index.html" lang="fr">🇫🇷 Français</a>
+                        <a href="../en/index.html" lang="en">🇬🇧 English</a>
+                        <a href="../es/index.html" lang="es">🇪🇸 Español</a>
+                        <a href="../pt/index.html" lang="pt">🇵🇹 Português</a>
+                        <a href="../de/index.html" lang="de">🇩🇪 Deutsch</a>
+                        <a href="../nl/index.html" lang="nl">🇳🇱 Nederlands</a>
+                        <a href="../it/index.html" lang="it">🇮🇹 Italiano</a>
+                    </div>
                 </div>
             </div>
         </section>
-    </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="index.html">Accueil</a>
-                <a href="privacy.html">Politique de Confidentialité</a>
-                <a href="terms.html">Conditions Générales d'Utilisation</a>
-                <a href="legal.html">Mentions Légales</a>
+        <section class="final-cta">
+            <div class="wrap">
+                <div class="box">
+                    <h2>Gardez l'esprit libre, on compte pour vous.</h2>
+                    <p>Amplitude, repos et circuits : tout tient dans votre poche.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.manu.perfectbusdriver" class="btn btn-primary">Télécharger gratuitement</a>
+                </div>
             </div>
-            <div class="contact-info">
-                <p><strong>Perfect Bus Driver</strong></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div>
+                <a href="index.html" class="brand">
+                    <img src="../car.png" alt="">
+                    <span class="brand-name">Perfect Bus Driver</span>
+                </a>
                 <p>Contact : <a href="mailto:perfectbusdriver@gmail.com">perfectbusdriver@gmail.com</a></p>
-                <p style="margin-top: 20px; color: #999;">© 2025 Perfect Bus Driver. Tous droits réservés.</p>
             </div>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Politique de confidentialité</a></li>
+                <li><a href="terms.html">Conditions générales d'utilisation</a></li>
+                <li><a href="legal.html">Mentions légales</a></li>
+            </ul>
+            <p class="copyright">© 2026 Perfect Bus Driver. Tous droits réservés.</p>
         </div>
     </footer>
 
