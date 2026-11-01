@@ -6,23 +6,23 @@
 
 .language-button {
     background: white;
-    border: 2px solid #667eea;
-    border-radius: 25px;
-    padding: 10px 20px;
+    border: 1.5px solid #d5dce7;
+    border-radius: 999px;
+    padding: 8px 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #667eea;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    color: #13213a;
     transition: all 0.3s;
 }
 
 .language-button:hover {
-    background: #667eea;
-    color: white;
+    border-color: #0aa5b8;
+    color: #087f8f;
 }
 
 .language-button .flag {
@@ -77,11 +77,11 @@
 }
 
 .language-option:hover {
-    background: #f0f4ff;
+    background: #e3f6f8;
 }
 
 .language-option.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #0aa5b8;
     color: white;
     font-weight: 600;
 }
