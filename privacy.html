@@ -235,7 +235,7 @@
     <div class="container">
         <div class="content">
             <h1>📋 Politique de Confidentialité</h1>
-            <p class="last-update">Dernière mise à jour : 18 novembre 2025</p>
+            <p class="last-update">Dernière mise à jour : 1er novembre 2026</p>
 
             <div class="highlight-box">
                 <p><strong>🔒 Votre vie privée est notre priorité.</strong> Perfect Bus Driver respecte votre vie privée et s'engage à protéger vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD).</p>
@@ -250,9 +250,9 @@
             <h3>2.1 Données de Localisation GPS</h3>
             <p><strong>Quand collectons-nous ces données ?</strong></p>
             <ul>
-                <li><strong>UNIQUEMENT</strong> lorsque vous démarrez manuellement la fonctionnalité "Traçage de Circuit"</li>
-                <li>Une notification persistante vous informe en temps réel de la collecte active</li>
-                <li>La collecte s'arrête immédiatement lorsque vous arrêtez le traçage</li>
+                <li><strong>UNIQUEMENT</strong> lorsque vous utilisez une fonctionnalité qui en a besoin : "Traçage de Circuit", "Mode Guidage", "Ma position" et carte des aires de repos</li>
+                <li>Pendant le traçage, une notification persistante vous informe en temps réel de la collecte active</li>
+                <li>La collecte s'arrête immédiatement lorsque vous arrêtez le traçage ou quittez la fonctionnalité</li>
             </ul>
 
             <p><strong>Comment utilisons-nous ces données ?</strong></p>
@@ -260,16 +260,17 @@
                 <li>Enregistrement de vos circuits de travail sur votre appareil local</li>
                 <li>Création de fichiers exportables (formats KML, JSON, GPX, CSV)</li>
                 <li>Visualisation de vos trajets sur carte</li>
-                <li><strong>AUCUN envoi</strong> vers nos serveurs ou des serveurs tiers</li>
+                <li>Calcul d'itinéraire, affichage de la carte et de votre adresse, recherche des aires de repos à proximité : pour ces fonctions, votre position du moment est envoyée ponctuellement à des services tiers (voir section 7)</li>
+                <li><strong>AUCUN envoi</strong> vers nos propres serveurs : nous n'en avons pas</li>
             </ul>
 
             <div class="important">
-                <p><strong>⚠️ Important :</strong> Vos données GPS restent <strong>exclusivement sur votre appareil</strong>. Nous ne collectons, ne stockons et ne transmettons AUCUNE donnée de localisation sur des serveurs externes.</p>
+                <p><strong>⚠️ Important :</strong> Vos circuits et historiques de position sont enregistrés <strong>exclusivement sur votre appareil</strong>. Nous ne recevons, ne stockons et ne consultons jamais votre position. Certaines fonctionnalités envoient toutefois votre position du moment, de façon ponctuelle et chiffrée (HTTPS), aux services tiers décrits en section 7, uniquement pour vous rendre le service demandé. Ces envois ne sont associés à aucun compte ni identifiant.</p>
             </div>
 
             <p><strong>Base légale (RGPD) :</strong></p>
             <ul>
-                <li>Votre consentement explicite (action manuelle de démarrage du traçage)</li>
+                <li>Votre consentement explicite (autorisation de localisation Android et démarrage manuel de la fonctionnalité)</li>
                 <li>Exécution d'une fonctionnalité que vous avez expressément demandée</li>
             </ul>
 
@@ -302,7 +303,7 @@
 
             <div class="highlight-box">
                 <p><strong>✅ Nous ne vendons JAMAIS vos données à des tiers.</strong></p>
-                <p><strong>✅ Nous ne partageons JAMAIS vos données de localisation.</strong></p>
+                <p><strong>✅ Nous ne partageons JAMAIS vos données de localisation à des fins commerciales ou publicitaires.</strong></p>
                 <p><strong>✅ Nous n'utilisons AUCUN tracker publicitaire.</strong></p>
             </div>
 
@@ -313,7 +314,9 @@
             <ul>
                 <li>Utilisation du stockage scopé Android (Scoped Storage)</li>
                 <li>Chiffrement des préférences sensibles (EncryptedSharedPreferences)</li>
-                <li>Aucune synchronisation cloud automatique</li>
+                <li>Documents personnels (permis, carte conducteur, FIMO, identifiants) chiffrés et exclus de la sauvegarde automatique Android</li>
+                <li>Export des documents personnels chiffré avec un mot de passe que vous choisissez</li>
+                <li>Aucune synchronisation avec nos serveurs. Si la sauvegarde Google est activée sur votre téléphone, vos circuits et réglages peuvent figurer dans votre sauvegarde Android personnelle, à laquelle nous n'avons pas accès</li>
             </ul>
 
             <h3>4.2 Mesures de Sécurité</h3>
@@ -333,10 +336,12 @@
             </ul>
 
             <h2>5. Partage de Données</h2>
-            <p><strong>Perfect Bus Driver ne partage vos données avec AUCUN tiers.</strong></p>
-            <p>Les seules exceptions sont :</p>
+            <p><strong>Perfect Bus Driver ne vend ni ne cède vos données à AUCUN tiers.</strong></p>
+            <p>Les seules transmissions sont :</p>
             <ul>
+                <li><strong>Services tiers techniques :</strong> L'envoi ponctuel de votre position aux services nécessaires au fonctionnement de certaines fonctionnalités (voir section 7)</li>
                 <li><strong>Export volontaire :</strong> Lorsque vous exportez manuellement un circuit (KML, JSON, etc.)</li>
+                <li><strong>Partage volontaire :</strong> Lorsque vous partagez votre position ou une aire de repos (lien Google Maps)</li>
                 <li><strong>Obligation légale :</strong> Si requis par la loi (décision de justice, autorité compétente)</li>
             </ul>
 
@@ -369,18 +374,37 @@
 
             <h2>7. Services Tiers</h2>
 
+            <p>Certaines fonctionnalités font appel aux services ci-dessous. Comme pour toute connexion Internet, ils reçoivent aussi l'adresse IP de votre appareil. Nous n'avons aucun accès aux données qu'ils reçoivent.</p>
+
             <h3>7.1 OpenStreetMap</h3>
             <p>L'application utilise OpenStreetMap pour afficher les cartes :</p>
             <ul>
                 <li>Service gratuit et open-source</li>
+                <li>Les portions de carte affichées sont téléchargées depuis ses serveurs, ce qui révèle la zone consultée</li>
+                <li>Dans "Ma position", vos coordonnées sont envoyées pour centrer la carte</li>
                 <li>Consulter leur politique : <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank">OSM Privacy Policy</a></li>
             </ul>
 
             <h3>7.2 OSRM (Open Source Routing Machine)</h3>
-            <p>Pour le calcul d'itinéraires :</p>
+            <p>Pour le calcul d'itinéraires du "Mode Guidage" :</p>
             <ul>
-                <li>Service de routage open-source</li>
-                <li>Aucune donnée personnelle transmise</li>
+                <li>Service de routage open-source (router.project-osrm.org)</li>
+                <li>Votre position actuelle et la destination sont envoyées pour calculer l'itinéraire</li>
+                <li>Aucun nom, compte ni identifiant n'est transmis</li>
+            </ul>
+
+            <h3>7.3 Overpass API (données OpenStreetMap)</h3>
+            <p>Pour la recherche des aires de repos, hôtels et parkings poids lourds :</p>
+            <ul>
+                <li>La zone affichée sur la carte est envoyée à overpass-api.de</li>
+                <li>Aucun nom, compte ni identifiant n'est transmis</li>
+            </ul>
+
+            <h3>7.4 Google</h3>
+            <ul>
+                <li><strong>Adresse dans "Ma position" :</strong> vos coordonnées sont envoyées au service de géocodage d'Android (fourni par Google) pour afficher l'adresse correspondante</li>
+                <li><strong>Google Play :</strong> mises à jour et avis dans l'application</li>
+                <li>Consulter leur politique : <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
             </ul>
 
             <h2>8. Protection des Mineurs</h2>

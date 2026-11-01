@@ -12,7 +12,7 @@ Allow: /*.html
 # Disallow: 
 
 # Sitemap XML (indiquer l'emplacement du sitemap)
-Sitemap: https://perfectbusdriver.github.io/perfect-bus-driver-site/sitemap.xml
+Sitemap: https://perfectbusdriver.github.io/perfectbusdriver-website/sitemap.xml
 
 # Règles spécifiques pour les principaux moteurs
 
