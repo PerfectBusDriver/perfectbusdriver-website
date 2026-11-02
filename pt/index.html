@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="../common.css">
-    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../home.css?v=3">
 </head>
 <body>
     <header class="site-header">
@@ -196,13 +196,47 @@
                 <div class="section-head center">
                     <span class="kicker" style="color: var(--ink-muted)">E ainda</span>
                     <h2>Toda a caixa de ferramentas do motorista</h2>
-                    <p>As pequenas ferramentas que facilitam o dia, reunidas numa só app.</p>
+                    <p>18 ferramentas práticas além do cálculo dos descansos e do traçador, reunidas numa só app.</p>
                 </div>
-                <div class="tool-grid">
-                    <article class="tool"><div class="card-icon">📍</div><h3>Posição e pontos de interesse</h3><p>Partilhe a sua posição, encontre parques para pesados, áreas de serviço, restaurantes de estrada e postos de combustível.</p></article>
-                    <article class="tool"><div class="card-icon">📚</div><h3>Regulamentação</h3><p>Fichas de tempos de condução, limites de velocidade europeus, fichas orais, informação CAM.</p></article>
-                    <article class="tool"><div class="card-icon">🧮</div><h3>Calculadoras</h3><p>Soma de horas, conversão minutos / centésimas, velocidade média, cronómetro de pausa.</p></article>
-                    <article class="tool"><div class="card-icon">🗂️</div><h3>Organização</h3><p>Contador de passageiros, escala do motorista e documentos pessoais.</p></article>
+                <div class="tool-groups">
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🧮</span><h3>Calculadoras e cronómetros<small>5 ferramentas</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">⏸️</span><div><b>Cronómetros de pausa</b><span>15, 30 e 45 min, com alarme no fim, mesmo com o ecrã desligado.</span></div></li>
+                            <li><span class="ico">🕒</span><div><b>Cálculo de horas</b><span>Some ou subtraia duas durações, mesmo depois da meia-noite.</span></div></li>
+                            <li><span class="ico">🛣️</span><div><b>Tempo de viagem</b><span>Distância e velocidade média: obtenha a duração estimada.</span></div></li>
+                            <li><span class="ico">🚀</span><div><b>Velocidade média</b><span>Distância e tempo gasto: obtenha a sua média em km/h.</span></div></li>
+                            <li><span class="ico">🔁</span><div><b>Conversor</b><span>Minutos ⇄ centésimas, pés ⇄ metros, polegadas ⇄ cm, km/h ⇄ mph.</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🗺️</span><h3>Na estrada<small>5 ferramentas</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">🅿️</span><div><b>Áreas de descanso</b><span>Mapa de áreas, hotéis, parques para pesados e postos DKV em França e Espanha, com filtros e orientação por voz.</span></div></li>
+                            <li><span class="ico">📍</span><div><b>A minha posição</b><span>Coordenadas precisas, morada e minimapa, para copiar ou partilhar.</span></div></li>
+                            <li><span class="ico">🚌</span><div><b>Parques para autocarros</b><span>Acesso direto ao Buspark Europe e ao Park Your Bus.</span></div></li>
+                            <li><span class="ico">🧭</span><div><b>GPS para pesados</b><span>Atalhos para o Road Lords e o Sygic Truck.</span></div></li>
+                            <li><span class="ico">🍽️</span><div><b>Restaurantes de estrada</b><span>Encontre onde comer durante a pausa (França).</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">📚</span><h3>Regulamentação<small>5 ferramentas</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">⚖️</span><div><b>Tempos de condução e descanso</b><span>16 secções claras: Regulamento CE 561/2006 e regras francesas.</span></div></li>
+                            <li><span class="ico">🚦</span><div><b>Limites de velocidade</b><span>Velocidades de autocarro em 12 países europeus, por tipo de estrada.</span></div></li>
+                            <li><span class="ico">🌿</span><div><b>Zonas de emissões reduzidas</b><span>11 países, e o acesso de autocarros a Roma, Florença, Veneza, Pompeia, Barcelona, Madrid e Amesterdão.</span></div></li>
+                            <li><span class="ico">🇪🇸</span><div><b>Províncias espanholas</b><span>As abreviaturas a introduzir no tacógrafo ao passar a fronteira.</span></div></li>
+                            <li><span class="ico">🎓</span><div><b>Fichas orais</b><span>12 fichas de revisão: condução noturna, montanha, acidente, condução ecológica, ângulos mortos…</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🗂️</span><h3>Organização<small>3 ferramentas</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">👥</span><div><b>Contador de passageiros</b><span>+1 ou +2 a cada entrada, com o total em grande.</span></div></li>
+                            <li><span class="ico">🪪</span><div><b>Documentos pessoais</b><span>Carta, cartão de condutor, CAM: aviso antes de expirar, dados cifrados.</span></div></li>
+                            <li><span class="ico">📅</span><div><b>Escala</b><span>A sua escala online, aberta diretamente na app.</span></div></li>
+                        </ul>
+                    </article>
                 </div>
                 <ul class="why">
                     <li>🎯 Criada por e para motoristas</li>
