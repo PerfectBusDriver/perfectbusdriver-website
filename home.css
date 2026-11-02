@@ -672,36 +672,82 @@ section { padding: 96px 0; }
 
 .more { background: var(--surface); }
 
-.tool-grid {
+.tool-groups {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    align-items: start;
 }
 
-.tool {
-    padding: 24px;
+.tool-group {
+    padding: 26px 26px 14px;
     border-radius: var(--radius);
     border: 1px solid var(--line);
     background: var(--bg);
 }
 
-.tool .card-icon {
-    width: 44px;
-    height: 44px;
+.tool-group-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+}
+
+.tool-group-head .card-icon {
+    width: 46px;
+    height: 46px;
+    margin: 0;
     font-size: 22px;
+    background: var(--navy-900);
+}
+
+.tool-group-head h3 {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--navy-900);
+    line-height: 1.2;
+}
+
+.tool-group-head small {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink-muted);
+}
+
+.tool-list { list-style: none; }
+
+.tool-list li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 12px;
+    align-items: start;
+    padding: 12px 0;
+}
+
+.tool-list li + li { border-top: 1px dashed var(--line); }
+
+.tool-list .ico {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
     background: var(--surface);
     box-shadow: var(--shadow-sm);
-    margin-bottom: 14px;
 }
 
-.tool h3 {
-    font-size: 17px;
-    font-weight: 800;
+.tool-list b {
+    display: block;
+    font-size: 15.5px;
     color: var(--navy-900);
-    margin-bottom: 6px;
+    line-height: 1.35;
 }
 
-.tool p { font-size: 14.5px; color: var(--ink-soft); }
+.tool-list div span { font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; }
 
 .why {
     display: flex;
@@ -870,7 +916,6 @@ section { padding: 96px 0; }
     .hero .wrap { grid-template-columns: 1fr; gap: 48px; padding-top: 56px; padding-bottom: 72px; }
     .circuit-layout { grid-template-columns: 1fr; }
     .circuit-map { order: 2; }
-    .tool-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 760px) {
@@ -885,7 +930,8 @@ section { padding: 96px 0; }
     .phone { width: 270px; transform: none; }
     .time-grid, .benefits, .how-grid { grid-template-columns: 1fr; }
     .benefits { padding: 22px; }
-    .tool-grid { grid-template-columns: 1fr; }
+    .tool-groups { grid-template-columns: 1fr; }
+    .tool-group { padding: 22px 18px 8px; }
     .compare { font-size: 14px; }
     .compare-row > div { padding: 10px 12px; }
     .final-cta { padding-bottom: 64px; }
