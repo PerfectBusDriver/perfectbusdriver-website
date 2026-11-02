@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="../common.css">
-    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../home.css?v=3">
 </head>
 <body>
     <header class="site-header">
@@ -196,13 +196,47 @@
                 <div class="section-head center">
                     <span class="kicker" style="color: var(--ink-muted)">En verder</span>
                     <h2>De complete gereedschapskist van de chauffeur</h2>
-                    <p>Handige hulpmiddelen die je dag makkelijker maken, samen in één app.</p>
+                    <p>18 handige tools naast de rusttijdberekening en de route-tracker, samen in één app.</p>
                 </div>
-                <div class="tool-grid">
-                    <article class="tool"><div class="card-icon">📍</div><h3>Positie &amp; nuttige plekken</h3><p>Deel je positie, vind vrachtwagenparkings, rustplaatsen, wegrestaurants en tankstations.</p></article>
-                    <article class="tool"><div class="card-icon">📚</div><h3>Regelgeving</h3><p>Rij- en rusttijdenregels, Europese snelheidslimieten, mondelinge examenfiches, info over code 95.</p></article>
-                    <article class="tool"><div class="card-icon">🧮</div><h3>Rekenhulpen</h3><p>Uren optellen, minuten / honderdsten omrekenen, gemiddelde snelheid, pauzetimer.</p></article>
-                    <article class="tool"><div class="card-icon">🗂️</div><h3>Organisatie</h3><p>Passagiersteller, dienstrooster en persoonlijke documenten.</p></article>
+                <div class="tool-groups">
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🧮</span><h3>Rekenhulpen &amp; timers<small>5 tools</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">⏸️</span><div><b>Pauzetimers</b><span>15, 30 en 45 min, met alarm op het einde, ook met het scherm uit.</span></div></li>
+                            <li><span class="ico">🕒</span><div><b>Uren berekenen</b><span>Twee duren optellen of aftrekken, ook over middernacht heen.</span></div></li>
+                            <li><span class="ico">🛣️</span><div><b>Reistijd</b><span>Afstand en gemiddelde snelheid: krijg de geschatte duur.</span></div></li>
+                            <li><span class="ico">🚀</span><div><b>Gemiddelde snelheid</b><span>Afstand en gereden tijd: krijg je gemiddelde in km/u.</span></div></li>
+                            <li><span class="ico">🔁</span><div><b>Omrekenen</b><span>Minuten ⇄ honderdsten, voet ⇄ meter, inch ⇄ cm, km/u ⇄ mph.</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🗺️</span><h3>Onderweg<small>5 tools</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">🅿️</span><div><b>Rustplaatsen</b><span>Kaart met rustplaatsen, hotels, vrachtwagenparkings en DKV-stations in Frankrijk en Spanje, met filters en gesproken begeleiding.</span></div></li>
+                            <li><span class="ico">📍</span><div><b>Mijn positie</b><span>Precieze coördinaten, adres en minikaart, om te kopiëren of te delen.</span></div></li>
+                            <li><span class="ico">🚌</span><div><b>Busparkings</b><span>Rechtstreekse toegang tot Buspark Europe en Park Your Bus.</span></div></li>
+                            <li><span class="ico">🧭</span><div><b>Vrachtwagennavigatie</b><span>Snelkoppelingen naar Road Lords en Sygic Truck.</span></div></li>
+                            <li><span class="ico">🍽️</span><div><b>Wegrestaurants</b><span>Vind een plek om te eten tijdens je pauze (Frankrijk).</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">📚</span><h3>Regelgeving<small>5 tools</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">⚖️</span><div><b>Rij- en rusttijden</b><span>16 duidelijke rubrieken: Verordening (EG) 561/2006 en Franse regels.</span></div></li>
+                            <li><span class="ico">🚦</span><div><b>Snelheidslimieten</b><span>Snelheden voor touringcars in 12 Europese landen, per type weg.</span></div></li>
+                            <li><span class="ico">🌿</span><div><b>Lage-emissiezones</b><span>11 landen, plus de toegang voor bussen tot Rome, Florence, Venetië, Pompeii, Barcelona, Madrid en Amsterdam.</span></div></li>
+                            <li><span class="ico">🇪🇸</span><div><b>Spaanse provincies</b><span>De afkortingen die je bij de grensovergang in de tachograaf invoert.</span></div></li>
+                            <li><span class="ico">🎓</span><div><b>Examenfiches</b><span>12 oefenfiches: nachtrijden, bergen, ongeval, zuinig rijden, dode hoeken…</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🗂️</span><h3>Organisatie<small>3 tools</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">👥</span><div><b>Passagiersteller</b><span>+1 of +2 bij elke instap, het totaal groot in beeld.</span></div></li>
+                            <li><span class="ico">🪪</span><div><b>Persoonlijke documenten</b><span>Rijbewijs, bestuurderskaart, code 95: herinnering voor de vervaldatum, versleutelde gegevens.</span></div></li>
+                            <li><span class="ico">📅</span><div><b>Dienstrooster</b><span>Je online rooster, rechtstreeks in de app geopend.</span></div></li>
+                        </ul>
+                    </article>
                 </div>
                 <ul class="why">
                     <li>🎯 Door en voor chauffeurs</li>
