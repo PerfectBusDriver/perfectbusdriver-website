@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="../common.css">
-    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../home.css?v=3">
 </head>
 <body>
     <header class="site-header">
@@ -196,13 +196,47 @@
                 <div class="section-head center">
                     <span class="kicker" style="color: var(--ink-muted)">Außerdem</span>
                     <h2>Der komplette Werkzeugkasten für Fahrer</h2>
-                    <p>Die kleinen Helfer, die den Arbeitstag erleichtern – alle in einer App.</p>
+                    <p>18 praktische Tools zusätzlich zum Ruhezeitrechner und Strecken-Tracker, alle in einer App.</p>
                 </div>
-                <div class="tool-grid">
-                    <article class="tool"><div class="card-icon">📍</div><h3>Standort &amp; Orte</h3><p>Standort teilen, Lkw-Parkplätze, Rastplätze, Autohöfe und Tankstellen finden.</p></article>
-                    <article class="tool"><div class="card-icon">📚</div><h3>Vorschriften</h3><p>Lenk- und Ruhezeiten, europäische Tempolimits, Prüfungsblätter, Infos zur Berufskraftfahrer-Qualifikation.</p></article>
-                    <article class="tool"><div class="card-icon">🧮</div><h3>Rechner</h3><p>Stunden addieren, Minuten / Industrieminuten umrechnen, Durchschnittsgeschwindigkeit, Pausen-Stoppuhr.</p></article>
-                    <article class="tool"><div class="card-icon">🗂️</div><h3>Organisation</h3><p>Fahrgastzähler, Dienstplan und persönliche Dokumente.</p></article>
+                <div class="tool-groups">
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🧮</span><h3>Rechner &amp; Timer<small>5 Tools</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">⏸️</span><div><b>Pausen-Timer</b><span>15, 30 und 45 Min. mit Alarm am Ende, auch bei ausgeschaltetem Bildschirm.</span></div></li>
+                            <li><span class="ico">🕒</span><div><b>Stundenrechner</b><span>Zwei Zeiten addieren oder subtrahieren, auch über Mitternacht.</span></div></li>
+                            <li><span class="ico">🛣️</span><div><b>Fahrzeit</b><span>Distanz und Durchschnittsgeschwindigkeit: geschätzte Dauer erhalten.</span></div></li>
+                            <li><span class="ico">🚀</span><div><b>Durchschnittsgeschwindigkeit</b><span>Distanz und benötigte Zeit: Ihr Schnitt in km/h.</span></div></li>
+                            <li><span class="ico">🔁</span><div><b>Umrechner</b><span>Minuten ⇄ Industrieminuten, Fuß ⇄ Meter, Zoll ⇄ cm, km/h ⇄ mph.</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🗺️</span><h3>Unterwegs<small>5 Tools</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">🅿️</span><div><b>Rastplätze</b><span>Karte mit Rastplätzen, Hotels, Lkw-Parkplätzen und DKV-Stationen in Frankreich und Spanien, mit Filtern und Sprachführung.</span></div></li>
+                            <li><span class="ico">📍</span><div><b>Mein Standort</b><span>Genaue Koordinaten, Adresse und Minikarte, zum Kopieren oder Teilen.</span></div></li>
+                            <li><span class="ico">🚌</span><div><b>Busparkplätze</b><span>Direkter Zugang zu Buspark Europe und Park Your Bus.</span></div></li>
+                            <li><span class="ico">🧭</span><div><b>Lkw-Navi</b><span>Verknüpfungen zu Road Lords und Sygic Truck.</span></div></li>
+                            <li><span class="ico">🍽️</span><div><b>Fernfahrer-Restaurants</b><span>Finden Sie einen Ort zum Essen in Ihrer Pause (Frankreich).</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">📚</span><h3>Vorschriften<small>5 Tools</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">⚖️</span><div><b>Lenk- und Ruhezeiten</b><span>16 übersichtliche Kapitel: Verordnung (EG) 561/2006 und französische Regeln.</span></div></li>
+                            <li><span class="ico">🚦</span><div><b>Tempolimits</b><span>Bus-Höchstgeschwindigkeiten in 12 europäischen Ländern, nach Straßentyp.</span></div></li>
+                            <li><span class="ico">🌿</span><div><b>Umweltzonen</b><span>11 Länder, dazu die Buszufahrt in Rom, Florenz, Venedig, Pompeji, Barcelona, Madrid und Amsterdam.</span></div></li>
+                            <li><span class="ico">🇪🇸</span><div><b>Spanische Provinzen</b><span>Die Kürzel, die beim Grenzübertritt in den Fahrtenschreiber einzugeben sind.</span></div></li>
+                            <li><span class="ico">🎓</span><div><b>Prüfungsblätter</b><span>12 Lernblätter: Nachtfahrt, Gebirge, Unfall, spritsparendes Fahren, toter Winkel…</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🗂️</span><h3>Organisation<small>3 Tools</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">👥</span><div><b>Fahrgastzähler</b><span>+1 oder +2 bei jedem Einstieg, die Summe groß angezeigt.</span></div></li>
+                            <li><span class="ico">🪪</span><div><b>Persönliche Dokumente</b><span>Führerschein, Fahrerkarte, Modul 95: Erinnerung vor Ablauf, verschlüsselte Daten.</span></div></li>
+                            <li><span class="ico">📅</span><div><b>Dienstplan</b><span>Ihr Online-Dienstplan, direkt in der App geöffnet.</span></div></li>
+                        </ul>
+                    </article>
                 </div>
                 <ul class="why">
                     <li>🎯 Von Fahrern für Fahrer</li>
