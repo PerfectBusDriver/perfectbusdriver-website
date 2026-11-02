@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="../common.css">
-    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../home.css?v=3">
 </head>
 <body>
     <header class="site-header">
@@ -196,13 +196,47 @@
                 <div class="section-head center">
                     <span class="kicker" style="color: var(--ink-muted)">E inoltre</span>
                     <h2>Tutta la cassetta degli attrezzi dell'autista</h2>
-                    <p>I piccoli strumenti che semplificano la giornata, riuniti in una sola app.</p>
+                    <p>18 strumenti pratici oltre al calcolo dei riposi e al tracciatore, riuniti in una sola app.</p>
                 </div>
-                <div class="tool-grid">
-                    <article class="tool"><div class="card-icon">📍</div><h3>Posizione e punti di interesse</h3><p>Condividi la tua posizione, trova parcheggi per mezzi pesanti, aree di sosta, ristoranti e distributori.</p></article>
-                    <article class="tool"><div class="card-icon">📚</div><h3>Normativa</h3><p>Schede sui tempi di guida, limiti di velocità europei, schede per l'orale, informazioni CQC.</p></article>
-                    <article class="tool"><div class="card-icon">🧮</div><h3>Calcolatori</h3><p>Somma di ore, conversione minuti / centesimi, velocità media, cronometro pausa.</p></article>
-                    <article class="tool"><div class="card-icon">🗂️</div><h3>Organizzazione</h3><p>Contapasseggeri, turni dell'autista e documenti personali.</p></article>
+                <div class="tool-groups">
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🧮</span><h3>Calcolatori e cronometri<small>5 strumenti</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">⏸️</span><div><b>Cronometri di pausa</b><span>15, 30 e 45 min, con suoneria alla fine, anche a schermo spento.</span></div></li>
+                            <li><span class="ico">🕒</span><div><b>Calcolo ore</b><span>Somma o sottrai due durate, anche oltre la mezzanotte.</span></div></li>
+                            <li><span class="ico">🛣️</span><div><b>Tempo di percorrenza</b><span>Distanza e velocità media: ottieni la durata stimata.</span></div></li>
+                            <li><span class="ico">🚀</span><div><b>Velocità media</b><span>Distanza e tempo impiegato: ottieni la tua media in km/h.</span></div></li>
+                            <li><span class="ico">🔁</span><div><b>Convertitore</b><span>Minuti ⇄ centesimi, piedi ⇄ metri, pollici ⇄ cm, km/h ⇄ mph.</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🗺️</span><h3>Su strada<small>5 strumenti</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">🅿️</span><div><b>Aree di sosta</b><span>Mappa di aree, hotel, parcheggi per mezzi pesanti e stazioni DKV in Francia e Spagna, con filtri e guida vocale.</span></div></li>
+                            <li><span class="ico">📍</span><div><b>La mia posizione</b><span>Coordinate precise, indirizzo e minimappa, da copiare o condividere.</span></div></li>
+                            <li><span class="ico">🚌</span><div><b>Parcheggi bus</b><span>Accesso diretto a Buspark Europe e Park Your Bus.</span></div></li>
+                            <li><span class="ico">🧭</span><div><b>Navigatore per mezzi pesanti</b><span>Scorciatoie verso Road Lords e Sygic Truck.</span></div></li>
+                            <li><span class="ico">🍽️</span><div><b>Ristoranti per camionisti</b><span>Trova dove mangiare durante la pausa (Francia).</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">📚</span><h3>Normativa<small>5 strumenti</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">⚖️</span><div><b>Tempi di guida e riposo</b><span>16 sezioni chiare: Regolamento CE 561/2006 e regole francesi.</span></div></li>
+                            <li><span class="ico">🚦</span><div><b>Limiti di velocità</b><span>Velocità dei pullman in 12 paesi europei, per tipo di strada.</span></div></li>
+                            <li><span class="ico">🌿</span><div><b>Zone a basse emissioni</b><span>11 paesi, più l'accesso dei pullman a Roma, Firenze, Venezia, Pompei, Barcellona, Madrid e Amsterdam.</span></div></li>
+                            <li><span class="ico">🇪🇸</span><div><b>Province spagnole</b><span>Le sigle da inserire nel tachigrafo quando si passa il confine.</span></div></li>
+                            <li><span class="ico">🎓</span><div><b>Schede per l'orale</b><span>12 schede di ripasso: guida notturna, montagna, incidente, guida ecologica, angoli ciechi…</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🗂️</span><h3>Organizzazione<small>3 strumenti</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">👥</span><div><b>Contapasseggeri</b><span>+1 o +2 a ogni salita, con il totale in grande.</span></div></li>
+                            <li><span class="ico">🪪</span><div><b>Documenti personali</b><span>Patente, carta del conducente, CQC: promemoria prima della scadenza, dati cifrati.</span></div></li>
+                            <li><span class="ico">📅</span><div><b>Turni</b><span>I tuoi turni online, aperti direttamente nell'app.</span></div></li>
+                        </ul>
+                    </article>
                 </div>
                 <ul class="why">
                     <li>🎯 Pensata da e per gli autisti</li>
