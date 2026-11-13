@@ -7,7 +7,7 @@
     <!-- Page d'accueil - Priorité maximale -->
     <url>
         <loc>https://perfectbusdriver.github.io/perfectbusdriver-website/index.html</loc>
-        <lastmod>2026-11-01</lastmod>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- Politique de Confidentialité - Priorité haute (requise par Play Store) -->
     <url>
         <loc>https://perfectbusdriver.github.io/perfectbusdriver-website/privacy.html</loc>
-        <lastmod>2026-11-01</lastmod>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -23,7 +23,7 @@
     <!-- Conditions Générales d'Utilisation - Priorité haute -->
     <url>
         <loc>https://perfectbusdriver.github.io/perfectbusdriver-website/terms.html</loc>
-        <lastmod>2026-11-01</lastmod>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
