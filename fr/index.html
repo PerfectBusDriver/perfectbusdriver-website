@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfect Bus Driver, l'application des conducteurs de car : calcul de l'amplitude et des temps de repos en quelques secondes, et traceur de circuit pour refaire vos parcours à l'identique.">
+    <meta name="keywords" content="conducteur de car, autocar, amplitude, temps de repos, repos quotidien, repos hebdomadaire, traceur de circuit, RSE, FIMO, FCO">
+    <meta name="theme-color" content="#0a1628">
+    <title>Perfect Bus Driver – Amplitude, temps de repos et circuits pour conducteurs de car</title>
+    <link rel="icon" type="image/png" href="../car.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="../home.css?v=4">
+    <!-- SEO:start -->
+    <link rel="canonical" href="https://perfectbusdriver.github.io/perfectbusdriver-website/fr/index.html">
+    <link rel="alternate" hreflang="fr" href="https://perfectbusdriver.github.io/perfectbusdriver-website/fr/index.html">
+    <link rel="alternate" hreflang="en" href="https://perfectbusdriver.github.io/perfectbusdriver-website/en/index.html">
+    <link rel="alternate" hreflang="es" href="https://perfectbusdriver.github.io/perfectbusdriver-website/es/index.html">
+    <link rel="alternate" hreflang="pt" href="https://perfectbusdriver.github.io/perfectbusdriver-website/pt/index.html">
+    <link rel="alternate" hreflang="de" href="https://perfectbusdriver.github.io/perfectbusdriver-website/de/index.html">
+    <link rel="alternate" hreflang="nl" href="https://perfectbusdriver.github.io/perfectbusdriver-website/nl/index.html">
+    <link rel="alternate" hreflang="it" href="https://perfectbusdriver.github.io/perfectbusdriver-website/it/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://perfectbusdriver.github.io/perfectbusdriver-website/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Perfect Bus Driver">
+    <meta property="og:title" content="Perfect Bus Driver – Amplitude, temps de repos et circuits pour conducteurs de car">
+    <meta property="og:description" content="Perfect Bus Driver, l'application des conducteurs de car : calcul de l'amplitude et des temps de repos en quelques secondes, et traceur de circuit pour refaire vos parcours à l'identique.">
+    <meta property="og:url" content="https://perfectbusdriver.github.io/perfectbusdriver-website/fr/index.html">
+    <meta property="og:image" content="https://perfectbusdriver.github.io/perfectbusdriver-website/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Perfect Bus Driver">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_GB">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="pt_PT">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:locale:alternate" content="nl_NL">
+    <meta property="og:locale:alternate" content="it_IT">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Perfect Bus Driver – Amplitude, temps de repos et circuits pour conducteurs de car">
+    <meta name="twitter:description" content="Perfect Bus Driver, l'application des conducteurs de car : calcul de l'amplitude et des temps de repos en quelques secondes, et traceur de circuit pour refaire vos parcours à l'identique.">
+    <meta name="twitter:image" content="https://perfectbusdriver.github.io/perfectbusdriver-website/og-image.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://perfectbusdriver.github.io/perfectbusdriver-website/#website",
+          "url": "https://perfectbusdriver.github.io/perfectbusdriver-website/",
+          "name": "Perfect Bus Driver",
+          "inLanguage": [
+            "fr",
+            "en",
+            "es",
+            "pt",
+            "de",
+            "nl",
+            "it"
+          ]
+        },
+        {
+          "@type": "MobileApplication",
+          "@id": "https://perfectbusdriver.github.io/perfectbusdriver-website/#app",
+          "name": "Perfect Bus Driver",
+          "description": "Perfect Bus Driver, l'application des conducteurs de car : calcul de l'amplitude et des temps de repos en quelques secondes, et traceur de circuit pour refaire vos parcours à l'identique.",
+          "url": "https://perfectbusdriver.github.io/perfectbusdriver-website/fr/index.html",
+          "installUrl": "https://play.google.com/store/apps/details?id=com.manu.perfectbusdriver",
+          "downloadUrl": "https://play.google.com/store/apps/details?id=com.manu.perfectbusdriver",
+          "image": "https://perfectbusdriver.github.io/perfectbusdriver-website/og-image.png",
+          "operatingSystem": "Android",
+          "applicationCategory": "BusinessApplication",
+          "inLanguage": [
+            "fr",
+            "en",
+            "es",
+            "pt",
+            "de",
+            "nl",
+            "it"
+          ],
+          "isAccessibleForFree": true,
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Perfect Bus Driver",
+            "url": "https://perfectbusdriver.github.io/perfectbusdriver-website/",
+            "logo": "https://perfectbusdriver.github.io/perfectbusdriver-website/car.png",
+            "email": "perfectbusdriver@gmail.com"
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- SEO:end -->
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <a href="index.html" class="brand">
+                <img src="../car.png" alt="">
+                <span>
+                    <span class="brand-name">Perfect Bus Driver</span>
+                    <span class="brand-tag">L'assistant du conducteur de car</span>
+                </span>
+            </a>
+            <nav class="main-nav" aria-label="Navigation principale">
+                <a href="#repos-amplitude">Repos &amp; amplitude</a>
+                <a href="#traceur">Traceur de circuit</a>
+                <a href="#outils">Autres outils</a>
+            </nav>
+            <div id="language-selector"></div>
+            <a href="https://play.google.com/store/apps/details?id=com.manu.perfectbusdriver" class="btn btn-primary header-cta">Télécharger</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <div>
+                    <span class="eyebrow">🚍 Pour les conducteurs de car et d'autocar</span>
+                    <h1>Votre amplitude et vos repos, <span class="hl">calculés en 2&nbsp;secondes.</span></h1>
+                    <p class="hero-lead">Saisissez votre prise de service : Perfect Bus Driver vous donne vos fins d'amplitude et de repos, vous rappelle l'échéance… et enregistre vos circuits pour les refaire à l'identique.</p>
+                    <div class="hero-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.manu.perfectbusdriver" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8 13.4 12l-9.8 10.2a1.5 1.5 0 0 1-.6-1.2V3c0-.5.2-.9.6-1.2Zm11 11.4 2.5 2.5-11.3 6.4 8.8-8.9Zm3.9-3.9 3 1.7c.9.5.9 1.6 0 2.1l-3 1.7-2.8-2.8 2.8-2.7ZM5.8 1.9l11.3 6.4-2.5 2.5-8.8-8.9Z"/></svg>
+                            Télécharger sur Google Play
+                        </a>
+                        <a href="#repos-amplitude" class="btn btn-ghost">Voir comment ça marche</a>
+                    </div>
+                    <ul class="hero-points">
+                        <li>Gratuit</li>
+                        <li>Sans publicité</li>
+                        <li>Vos données restent sur votre téléphone</li>
+                    </ul>
+                </div>
+
+                <div class="phone" aria-hidden="true">
+                    <div class="phone-screen">
+                        <div class="phone-top">
+                            <small>Calculateur</small>
+                            <strong>Amplitude</strong>
+                        </div>
+                        <div class="phone-start">
+                            <span>Prise de service<br>Lun. 3 nov.</span>
+                            <b>06:30</b>
+                        </div>
+                        <div class="amp-row"><span>12 h</span><b>18:30</b><i class="toggle"></i></div>
+                        <div class="amp-row on">
+                            <span>14 h</span><b>20:30</b><i class="toggle"></i>
+                            <div class="amp-progress"><i></i></div>
+                            <div class="amp-note">🔔 Rappel à 20:30 · il reste 5 h 19</div>
+                        </div>
+                        <div class="amp-row"><span>15 h</span><b>21:30</b><i class="toggle"></i></div>
+                        <div class="amp-row"><span>18 h · 2 cond.</span><b>00:30</b><i class="toggle"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activité n°1 -->
+        <section id="repos-amplitude" class="spot-time">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="kicker"><span class="num">1</span> L'essentiel au quotidien</span>
+                    <h2>Temps de repos et amplitude, sans calcul de tête</h2>
+                    <p>Fini les additions sur un coin de feuille de route. Indiquez une date et une heure, l'application calcule tout le reste selon la réglementation européenne.</p>
+                </div>
+
+                <div class="time-grid">
+                    <article class="time-card featured">
+                        <div class="card-icon">⏱️</div>
+                        <h3>Amplitude</h3>
+                        <p>À partir de votre prise de service, obtenez immédiatement l'heure de fin de chaque amplitude, y compris en double équipage.</p>
+                        <div class="chips"><span class="chip">12 h</span><span class="chip">14 h</span><span class="chip">15 h</span><span class="chip">18 h</span></div>
+                    </article>
+                    <article class="time-card">
+                        <div class="card-icon">🌙</div>
+                        <h3>Repos quotidien &amp; hebdomadaire</h3>
+                        <p>Entrez le début de votre repos et sachez exactement à quelle heure vous pourrez reprendre le volant.</p>
+                        <div class="chips"><span class="chip">11 h</span><span class="chip">9 h</span><span class="chip">45 h</span><span class="chip">24 h</span></div>
+                    </article>
+                    <article class="time-card">
+                        <div class="card-icon">📊</div>
+                        <h3>Suivi du repos hebdo réduit</h3>
+                        <p>Après un repos hebdomadaire réduit, l'application calcule la compensation à prendre et sa date limite, et signale les repos trop courts.</p>
+                        <div class="chips"><span class="chip">Compensation</span><span class="chip">Date limite</span></div>
+                    </article>
+                </div>
+
+                <div class="benefits">
+                    <div class="benefit"><span class="ico">📅</span><span><b>Rappel dans l'agenda</b>Un interrupteur suffit pour ajouter l'échéance à votre agenda.</span></div>
+                    <div class="benefit"><span class="ico">🔔</span><span><b>Notification à l'heure</b>Vous êtes prévenu quand l'amplitude ou le repos se termine.</span></div>
+                    <div class="benefit"><span class="ico">📈</span><span><b>Barre de progression</b>Temps écoulé et temps restant, mis à jour chaque minute.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activité n°2 -->
+        <section id="traceur" class="spot-circuit">
+            <div class="wrap">
+                <div class="circuit-layout">
+                    <div>
+                        <div class="section-head">
+                            <span class="kicker"><span class="num">2</span> Vos parcours, à l'identique</span>
+                            <h2>Le traceur de circuit</h2>
+                            <span class="not-gps"><span class="x">✕</span> Ce n'est pas un GPS</span>
+                            <p>Un GPS choisit la route pour vous. Le traceur, lui, vous fait suivre <strong>votre</strong> parcours : celui que vous avez enregistré, avec vos arrêts, dans l'ordre. Idéal pour un circuit scolaire, une ligne régulière ou un ramassage que vous ne connaissez pas encore.</p>
+                        </div>
+
+                        <ol class="steps">
+                            <li class="step">
+                                <span class="card-icon">⏺️</span>
+                                <div><h3>Enregistrez</h3><p>Appuyez sur Départ, marquez chaque arrêt d'une touche, puis Arrivée. Le tracé s'enregistre même écran éteint.</p></div>
+                            </li>
+                            <li class="step">
+                                <span class="card-icon">💾</span>
+                                <div><h3>Sauvegardez et partagez</h3><p>Nommez votre circuit, retrouvez-le dans « Mes circuits » et envoyez-le à un collègue.</p></div>
+                            </li>
+                            <li class="step">
+                                <span class="card-icon">🧭</span>
+                                <div><h3>Refaites-le</h3><p>L'application vous guide le long de votre tracé, annonce le prochain arrêt et vous alerte si vous vous en écartez.</p></div>
+                            </li>
+                        </ol>
+
+                        <div class="compare" role="table" aria-label="GPS ou traceur de circuit">
+                            <div class="compare-row compare-head" role="row"><div role="columnheader">Un GPS</div><div role="columnheader">Le traceur</div></div>
+                            <div class="compare-row" role="row"><div role="cell">Calcule l'itinéraire le plus rapide</div><div role="cell">Suit le parcours que vous avez roulé</div></div>
+                            <div class="compare-row" role="row"><div role="cell">Ignore vos points de ramassage</div><div role="cell">Annonce chaque arrêt, dans l'ordre</div></div>
+                            <div class="compare-row" role="row"><div role="cell">Recalcule dès que vous changez de rue</div><div role="cell">Vous alerte si vous quittez le circuit</div></div>
+                        </div>
+                    </div>
+
+                    <figure class="circuit-map">
+                        <svg viewBox="0 0 480 420" role="img" aria-label="Exemple de circuit enregistré avec ses arrêts">
+                            <rect width="480" height="420" fill="#eef2f7"/>
+                            <g fill="#ffffff">
+                                <rect x="30" y="30" width="120" height="80" rx="10"/><rect x="180" y="30" width="110" height="80" rx="10"/><rect x="320" y="30" width="100" height="80" rx="10"/><rect x="450" y="30" width="60" height="80" rx="10"/>
+                                <rect x="30" y="140" width="120" height="110" rx="10"/><rect x="180" y="140" width="110" height="110" rx="10"/><rect x="320" y="140" width="100" height="110" rx="10"/><rect x="450" y="140" width="60" height="110" rx="10"/>
+                                <rect x="30" y="280" width="120" height="110" rx="10"/><rect x="180" y="280" width="110" height="110" rx="10"/><rect x="320" y="280" width="100" height="110" rx="10"/><rect x="450" y="280" width="60" height="110" rx="10"/>
+                            </g>
+                            <rect x="196" y="160" width="78" height="70" rx="8" fill="#d9f0dc"/>
+                            <path d="M60 125 H 305 V 395" fill="none" stroke="#9aa6b8" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"/>
+                            <path d="M60 125 H 165 V 265 H 305 V 125 H 435 V 265 H 305 V 395" fill="none" stroke="#0aa5b8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-weight="800" font-size="14" text-anchor="middle">
+                                <circle cx="60" cy="125" r="15" fill="#0a1628"/><text x="60" y="130" fill="#fff">A</text>
+                                <circle cx="165" cy="200" r="14" fill="#fff" stroke="#f59e0b" stroke-width="4"/><text x="165" y="205" fill="#0a1628">1</text>
+                                <circle cx="235" cy="265" r="14" fill="#fff" stroke="#f59e0b" stroke-width="4"/><text x="235" y="270" fill="#0a1628">2</text>
+                                <circle cx="370" cy="125" r="14" fill="#fff" stroke="#f59e0b" stroke-width="4"/><text x="370" y="130" fill="#0a1628">3</text>
+                                <circle cx="435" cy="200" r="14" fill="#fff" stroke="#f59e0b" stroke-width="4"/><text x="435" y="205" fill="#0a1628">4</text>
+                                <circle cx="305" cy="395" r="15" fill="#0a1628"/><text x="305" y="400" fill="#fff">B</text>
+                            </g>
+                            <g transform="translate(305 190)">
+                                <circle r="20" fill="#0aa5b8" opacity=".2"/>
+                                <circle r="11" fill="#0aa5b8" stroke="#fff" stroke-width="4"/>
+                            </g>
+                            <g transform="translate(24 24)">
+                                <rect width="196" height="52" rx="12" fill="#0a1628"/>
+                                <text x="16" y="22" font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#8fb3d6">PROCHAIN ARRÊT</text>
+                                <text x="16" y="41" font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#fff">Arrêt 3 · 450 m</text>
+                            </g>
+                        </svg>
+                        <figcaption class="map-legend">
+                            <span><i style="background:#0aa5b8"></i>Votre circuit enregistré</span>
+                            <span><i style="background:repeating-linear-gradient(90deg,#9aa6b8 0 3px,transparent 3px 8px)"></i>Ce que proposerait un GPS</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <p class="export-note">Export possible en <b>GPX</b>, <b>KML</b> et <b>JSON</b>, avec statistiques de distance et d'arrêts. Le fond de carte et le recalcul d'itinéraire nécessitent une connexion Internet.</p>
+            </div>
+        </section>
+
+        <!-- Autres outils -->
+        <section id="outils" class="more">
+            <div class="wrap">
+                <div class="section-head center">
+                    <span class="kicker" style="color: var(--ink-muted)">Et aussi</span>
+                    <h2>Toute la boîte à outils du conducteur</h2>
+                    <p>17 outils pratiques en plus du calcul des repos et du traceur, réunis dans la même application.</p>
+                </div>
+                <div class="tool-groups">
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🧮</span><h3>Calculateurs &amp; chronos<small>5 outils</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">⏸️</span><div><b>Chronos de coupure</b><span>15, 30 et 45 min, avec sonnerie à la fin, même écran éteint.</span></div></li>
+                            <li><span class="ico">🕒</span><div><b>Calcul d'heures</b><span>Additionnez ou soustrayez deux durées, même quand on passe minuit.</span></div></li>
+                            <li><span class="ico">🛣️</span><div><b>Temps de trajet</b><span>Distance et vitesse moyenne : obtenez la durée estimée.</span></div></li>
+                            <li><span class="ico">🚀</span><div><b>Vitesse moyenne</b><span>Distance et temps mis : obtenez votre moyenne en km/h.</span></div></li>
+                            <li><span class="ico">🔁</span><div><b>Convertisseur</b><span>Minutes ⇄ centièmes, pieds ⇄ mètres, pouces ⇄ cm, km/h ⇄ mph.</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🗺️</span><h3>Sur la route<small>5 outils</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">🅿️</span><div><b>Aires de repos</b><span>Carte des aires, hôtels, parkings PL et stations DKV en France et en Espagne, avec filtres et guidage vocal.</span></div></li>
+                            <li><span class="ico">📍</span><div><b>Ma position</b><span>Coordonnées précises, adresse et mini-carte, à copier ou partager.</span></div></li>
+                            <li><span class="ico">🚌</span><div><b>Parkings autocar</b><span>Accès direct à Buspark Europe et Park Your Bus.</span></div></li>
+                            <li><span class="ico">🧭</span><div><b>GPS poids lourds</b><span>Raccourcis vers Road Lords et Sygic Truck.</span></div></li>
+                            <li><span class="ico">🍽️</span><div><b>Restaurants routiers</b><span>Trouvez où manger pendant votre pause.</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">📚</span><h3>Réglementation<small>5 outils</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">⚖️</span><div><b>Règles de conduite et de repos</b><span>16 rubriques claires : règlement CE 561/2006 et règles françaises.</span></div></li>
+                            <li><span class="ico">🚦</span><div><b>Limitations de vitesse</b><span>Vitesses autocar dans 12 pays européens, par type de route.</span></div></li>
+                            <li><span class="ico">🌿</span><div><b>Zones à faibles émissions</b><span>11 pays, et l'accès autocar à Rome, Florence, Venise, Pompéi, Barcelone, Madrid et Amsterdam.</span></div></li>
+                            <li><span class="ico">🇪🇸</span><div><b>Provinces espagnoles</b><span>Les abréviations à saisir dans le chronotachygraphe au passage de la frontière.</span></div></li>
+                            <li><span class="ico">🎓</span><div><b>Fiches orales</b><span>12 fiches de révision : conduite de nuit, montagne, accident, éco-conduite, angles morts…</span></div></li>
+                        </ul>
+                    </article>
+                    <article class="tool-group">
+                        <div class="tool-group-head"><span class="card-icon">🗂️</span><h3>Organisation<small>2 outils</small></h3></div>
+                        <ul class="tool-list">
+                            <li><span class="ico">👥</span><div><b>Compteur de voyageurs</b><span>+1 ou +2 à chaque montée, le total s'affiche en grand.</span></div></li>
+                            <li><span class="ico">🪪</span><div><b>Documents perso</b><span>Permis, carte conducteur, FIMO / FCO : rappel avant expiration, données chiffrées.</span></div></li>
+                        </ul>
+                    </article>
+                    <!-- Mini-jeux -->
+                    <article class="tool-group tool-group-wide">
+                        <div class="tool-group-head"><span class="card-icon">🎮</span><h3>Pendant la pause<small>Nouveau · 3 mini-jeux</small></h3></div>
+                        <p class="game-lead">Trois petits jeux pour souffler entre deux services, accessibles depuis Utilitaires ou le menu, rubrique « Jeux ».</p>
+                        <ul class="game-points">
+                            <li>🚌 <b>Perfect Bus Driver</b> — arcade : votre car détruit ou esquive le trafic sur 30 niveaux, avec bonus et top 10 des scores.</li>
+                            <li>🃏 <b>Solitaire</b> — le grand classique des cartes (Klondike), pour une pause tranquille.</li>
+                            <li>🧩 <b>Sudobus</b> — casse-tête logique : placez 9 bus, un par ligne, colonne et couleur, sans qu'ils se touchent. 4 niveaux de difficulté.</li>
+                        </ul>
+                        <p class="game-safety">⚠️ À utiliser uniquement à l'arrêt, jamais en conduisant.</p>
+                    </article>
+                </div>
+                <ul class="why">
+                    <li>🎯 Conçue par et pour les conducteurs</li>
+                    <li>🔒 Conforme RGPD</li>
+                    <li>📵 Calculateurs utilisables sans connexion</li>
+                    <li>🔋 Économe en batterie</li>
+                    <li>🔄 Mises à jour régulières</li>
+                    <li>💬 Support réactif</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="how">
+            <div class="wrap">
+                <div class="section-head center">
+                    <h2>Prêt en trois étapes</h2>
+                </div>
+                <div class="how-grid">
+                    <div class="how-item"><h3>Installez l'application</h3><p>Gratuite sur Google Play, sans compte à créer.</p></div>
+                    <div class="how-item"><h3>Choisissez votre langue</h3><p>L'interface et le guidage vocal s'adaptent à votre langue.</p></div>
+                    <div class="how-item"><h3>Lancez votre premier calcul</h3><p>Entrez votre prise de service ou démarrez l'enregistrement d'un circuit.</p></div>
+                </div>
+                <div class="langs">
+                    <p>🌍 Disponible en 7 langues</p>
+                    <div class="lang-list">
+                        <a href="../fr/index.html" lang="fr">🇫🇷 Français</a>
+                        <a href="../en/index.html" lang="en">🇬🇧 English</a>
+                        <a href="../es/index.html" lang="es">🇪🇸 Español</a>
+                        <a href="../pt/index.html" lang="pt">🇵🇹 Português</a>
+                        <a href="../de/index.html" lang="de">🇩🇪 Deutsch</a>
+                        <a href="../nl/index.html" lang="nl">🇳🇱 Nederlands</a>
+                        <a href="../it/index.html" lang="it">🇮🇹 Italiano</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="wrap">
+                <div class="box">
+                    <h2>Gardez l'esprit libre, on compte pour vous.</h2>
+                    <p>Amplitude, repos et circuits : tout tient dans votre poche.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.manu.perfectbusdriver" class="btn btn-primary">Télécharger gratuitement</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div>
+                <a href="index.html" class="brand">
+                    <img src="../car.png" alt="">
+                    <span class="brand-name">Perfect Bus Driver</span>
+                </a>
+                <p>Contact : <a href="mailto:perfectbusdriver@gmail.com">perfectbusdriver@gmail.com</a></p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Politique de confidentialité</a></li>
+                <li><a href="terms.html">Conditions générales d'utilisation</a></li>
+                <li><a href="legal.html">Mentions légales</a></li>
+            </ul>
+            <p class="copyright">© 2026 Perfect Bus Driver. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="../language-selector.js"></script>
+</body>
+</html>
